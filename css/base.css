@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+ --border-preset: 1px solid rgba(255, 255, 255, 0.1);
+ --theme-color: rgba(100, 100, 100, 0.65);
+ --boxshadow-preset: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+ --textshadow-preset: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+body{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ height: 100vh;
+ font-family: Verdana, Tahoma;
+ font-weight: 300;
+ background: #201E23;
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+ color: white;
+ transition: background-image 0.2s ease;
+ color-scheme: dark;
+ overflow-y: hidden;
+}
+button{
+ background: none;
+ border: none;
+}
+img{
+ width: 50px;
+ height: 50px;
+}
+a{
+ background: linear-gradient(to right, #6A55D7, #D05E45);
+ background-clip: text;
+ color: transparent;
+ font-weight: 400;
+}
