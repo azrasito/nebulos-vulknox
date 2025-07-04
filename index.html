@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NebulOS Beta</title>
+  <link rel="icon" href="assets/icons/favicon.png.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <button onclick="lock()" id="lockBtn"></button>
+  <div id="screen">
+    <div id="lockScreen">
+      <div id="date" style="font-weight: 500; font-family: 'Montserrat', Verdana; font-size: 20px; position: absolute; top: 18%; left: 47.7%; transform: translate(-50%); text-shadow: -1px 0 black, 1px 0 black, -1px 0 black, 1px 0 black;"></div>
+      <div id="hour3" style="font-weight: 800; font-family: 'Montserrat', Verdana; font-size: 70px; text-shadow: 2px 0 black, -2px 0 black, 2px 0 black, -2px 0 black;"></div>
+      <div id="fingadv"></div>
+      <button id="fingerprint"></button>
+    </div>
+    <div id="statusbar">
+      <div id="hour"></div>
+      <div id="notch">
+        <div id="peninsula"></div>
+      </div>
+      <div id="battery-container">
+        <div id="battery-level"></div>
+        <span id="battery-text">--%</span>
+      </div>
+    </div>
+    <div id="homescreen">
+      <button onclick="openSettings()" id="settingsButton" style="position: absolute; top: 90%; left: 50%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/settings.png" alt="settings"/></button>
+      <button onclick="showPeninsula(`Files not implemented`, 2100, 175, 40, 0, 10)" id="filesButton" style="position: absolute; top: 90%; left: 30%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/files.png" alt="files"/></button>
+      <button onclick="openClock()" id="clockButton" style="position: absolute; top: 90%; left: 70%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/clock.png" alt="clock"/></button>
+      <button onclick="openCalc()" id="calcButton" style="position: absolute; top: 90%; left: 10%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/calc.png" alt="calc"/></button>
+      <button onclick="showPeninsula(`Messages not implemented`, 2100, 200, 38, 2.50, 7.5)" id="msgButton" style="position: absolute; top: 90%; left: 90%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/message.png" alt="calc"/></button>
+    </div>
+    <div id="settingsApp">
+        <h2 style="font-weight: 100;">Settings</h2>
+      <br /><br />
+      <div id="sectionSett">
+        <button onclick="openThemes()">✦ Themes</button>
+        <br />
+        <button onclick="openPersonalization()">∆ Personalization</button>
+      </div>
+      <br /><br />
+      <div id="sectionSett">
+        <button onclick="openInfo()">∆ System Info</button>
+      </div>
+    </div>
+    <div id="themes">
+      <button onclick="ObsidianMist()">Obsidian Mist</button>
+      <button onclick="CristalFog()">Cristal Fog</button>
+      <button onclick="TransLava()">Translucent Lava</button>
+      <button onclick="paleGreen()">Pale Green</button>
+      <button onclick="bluevalley()">Blue Valley</button>
+    </div>
+    <div id="personalization">
+      <h2 style="font-weight:200;">Background</h2>
+      <div id="gallery">
+        <img src="assets/wallpapers/cristal.jpg" alt="Cristal" onclick="changeto(this)"/>
+        <img src="assets/wallpapers/croco.jpg" alt="Crocodile" onclick="changeto(this)"/>
+        <img src="assets/wallpapers/blackbg.jpg" alt="Dark Mode" onclick="changeto(this)"/>
+        <img src="assets/wallpapers/pikachu.jpg" alt="pikachu" onclick="changeto(this)"/>
+        <img src="assets/wallpapers/wolf.jpg" alt="wolf" onclick="changeto(this)"/>
+        <img src="assets/wallpapers/cat.jpg" alt="cat" onclick="changeto(this)"/>
+        <img src="assets/wallpapers/PB81.jpg" alt="Surface" onclick="changeto(this)"/>
+        <img src="assets/wallpapers/BarOS.jpg" alt="Lake" onclick="changeto(this)"/>
+        <img src="assets/wallpapers/background3.jpeg" alt="city" onclick="changeto(this)"/>
+        <img src="assets/wallpapers/dragon.png" alt="gradon" onclick="changeto(this)"/>
+      </div>
+      <br />
+      <input type="file" id="uploader" accept="image/*" style="display: none;"/>
+      <label for="uploader" id="uploader2">Upload a custom image</label>
+      <br /><br />
+    </div>
+    <div id="calculator">
+      <input type="text" id="calcScreen" placeholder="0"></input>
+      <div id="numpad">
+        <button onclick="erase()" id="erase" style="border-radius: 10px; background: #825555;">AC</button>
+        <button onclick="delLast()" id="delLast" style="background: #825555; border-radius: 10px;">←</button>
+        <button onclick="switchMinus()">±</button>
+        <button onclick="append('/')">÷</button>
+        <br />
+        <button onclick="append('7')">7</button>
+        <button onclick="append('8')">8</button>
+        <button onclick="append('9')">9</button>
+        <button onclick="append('*')">×</button>
+        <br />
+        <button onclick="append('4')">4</button>
+        <button onclick="append('5')">5</button>
+        <button onclick="append('6')">6</button>
+        <button onclick="append('-')">-</button>
+        <br />
+        <button onclick="append('1')">1</button>
+        <button onclick="append('2')">2</button>
+        <button onclick="append('3')">3</button>
+        <button onclick="append('+')">+</button>
+        <br />
+        <button onclick="append('0')">0</button>
+        <button onclick="append('00')">00</button>
+        <button onclick="append('.')">.</button>
+        <button onclick="calcc()" id="calcc" style="border-radius: 10px; background: #545464;">=</button>
+      </div>
+    </div>
+    <div id="clockApp">
+      <div id="hour2"></div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+  <script src="js/personalization.js"></script>
+  <script src="js/clock.js"></script>
+  <script src="js/calc.js"></script>
+  <script src="js/apps.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js");
+    }
+  </script>
+</body>
+</html>
