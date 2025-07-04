@@ -1,0 +1,28 @@
+@keyframes bounceIn {
+  0% {
+    transform: translateX(-50%) scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(-50%) scale(1.1);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(-50%) scale(0.95);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
+@keyframes shake{
+  0%{transform: rotate(0deg);}
+  5%{transform: rotate(5deg);}
+  10%{transform: rotate(0deg);}
+  15%{transform: rotate(-5deg);}
+  20%{transform: rotate(0deg);}
+  25%{transform: rotate(0deg);}
+  30%{transform: rotate(5deg);}
+  35%{transform: rotate(0deg);}
+  40%{transform: rotate(-5deg);}
+  45%{transform: rotate(0deg);}
+}
