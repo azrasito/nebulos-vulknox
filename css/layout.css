@@ -219,7 +219,7 @@
  height: 125px;
  object-fit: cover;
 }
-#uploader2{
+#uploader2,#bund{
  background: var(--theme-color);
  border-radius: 16px;
  border: var(--border-preset);
