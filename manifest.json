@@ -1,10 +1,10 @@
 {
-  "name": "NebulOS Web [RC]",
+  "name": "NebulOS v1.1",
   "short_name": "NebulOS",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#7f7f7f",
-  "theme_color": "#111166",
+  "background_color": "#868ABC",
+  "theme_color": "#8E3174",
   "icons": [
     {
       "src": "assets/icons/favicon.png.png",
