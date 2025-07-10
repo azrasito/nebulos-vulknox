@@ -1,21 +1,9 @@
-function openSettings() {
-  document.getElementById("settingsApp").classList.add("shown");
-  //showPeninsula("Opened settings", 1500)
-}
-function openPersonalization() {
-  document.getElementById("personalization").classList.add("shown")
-}
-function openFiles() {
-  
-}
-function openClock() {
-  document.getElementById("clockApp").classList.add("shown")
-}
-function openCalc() {
-  document.getElementById("calculator").classList.add("shown");
-}
-function openThemes() {
-  document.getElementById("themes").classList.add("shown");
+function openApp(appInternalName) {
+  document.getElementById(appInternalName).classList.add("shown")
+  document.getElementById(appInternalName).style.animation = "opening"
+    setTimeout(() => {
+      document.getElementById(appInternalName).style.animation = ""
+    }, 160)
 }
 
 
@@ -25,6 +13,10 @@ const calcu = document.getElementById('calculator');
 const settingsApp = document.getElementById('settingsApp');
 const clockApp = document.getElementById("clockApp");
 const themes = document.getElementById("themes")
+const sysInfo = document.getElementById("sysinfo")
+const galeria = document.getElementById("galeria")
+const phone = document.getElementById("phone")
+
 
 settingsApp.addEventListener('touchstart', (e) => {
   startX = e.touches[0].clientX;
@@ -33,6 +25,10 @@ settingsApp.addEventListener('touchend', (e) => {
   const endX = e.changedTouches[0].clientX;
   if (endX - startX > 100) {
     settingsApp.classList.remove('shown');
+    settingsApp.style.animation = "opening"
+    setTimeout(() => {
+      settingsApp.style.animation = ""
+    }, 160)
   }
 });
 settingsApp.addEventListener('mousedown', (e) => {
@@ -44,6 +40,7 @@ settingsApp.addEventListener('mouseup', (e) => {
     settingsApp.classList.remove('shown');
   }
 });
+
 persona.addEventListener('touchstart', (e) => {
   startX = e.touches[0].clientX;
 });
@@ -62,6 +59,7 @@ persona.addEventListener('mouseup', (e) => {
     persona.classList.remove('shown');
   }
 });
+
 calcu.addEventListener('touchstart', (e) => {
   startX = e.touches[0].clientX;
 });
@@ -82,6 +80,7 @@ calcu.addEventListener('mouseup', (e) => {
     document.getElementById("calcScreen").value = ""
   }
 });
+
 clockApp.addEventListener('touchstart', (e) => {
   startX = e.touches[0].clientX;
 });
@@ -100,6 +99,7 @@ clockApp.addEventListener('mouseup', (e) => {
     clockApp.classList.remove('shown');
   }
 });
+
 themes.addEventListener('touchstart', (e) => {
   startX = e.touches[0].clientX;
 });
@@ -116,5 +116,62 @@ themes.addEventListener('mouseup', (e) => {
   const endX = e.clientX;
   if (endX - startX > 100) {
     themes.classList.remove('shown');
+  }
+});
+
+sysInfo.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
+});
+sysInfo.addEventListener('touchend', (e) => {
+  const endX = e.changedTouches[0].clientX;
+  if (endX - startX > 100) {
+    sysInfo.classList.remove('shown');
+  }
+});
+sysInfo.addEventListener('mousedown', (e) => {
+  startX = e.clientX;
+});
+sysInfo.addEventListener('mouseup', (e) => {
+  const endX = e.clientX;
+  if (endX - startX > 100) {
+    sysInfo.classList.remove('shown');
+  }
+});
+
+galeria.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
+});
+galeria.addEventListener('touchend', (e) => {
+  const endX = e.changedTouches[0].clientX;
+  if (endX - startX > 100) {
+    galeria.classList.remove('shown');
+  }
+});
+galeria.addEventListener('mousedown', (e) => {
+  startX = e.clientX;
+});
+galeria.addEventListener('mouseup', (e) => {
+  const endX = e.clientX;
+  if (endX - startX > 100) {
+    galeria.classList.remove('shown');
+  }
+});
+
+phone.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
+});
+phone.addEventListener('touchend', (e) => {
+  const endX = e.changedTouches[0].clientX;
+  if (endX - startX > 100) {
+    phone.classList.remove('shown');
+  }
+});
+phone.addEventListener('mousedown', (e) => {
+  startX = e.clientX;
+});
+phone.addEventListener('mouseup', (e) => {
+  const endX = e.clientX;
+  if (endX - startX > 100) {
+    phone.classList.remove('shown');
   }
 });

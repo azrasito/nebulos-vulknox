@@ -7,7 +7,7 @@ function updateClock() {
   const month = String(now.getMonth() + 1).padStart(2, '0'); // Meses van de 0 a 11
   const year = now.getFullYear();
 
-  const formattedDate = `${day}/${month}/${year}`;
+  const formattedDate = `${month}/${day}/${year}`;
 
   document.getElementById('hour').textContent = `${hours}:${mins}`;
   document.getElementById('hour2').textContent = `${hours}:${mins}:${secs}`;

@@ -54,45 +54,6 @@ function bluevalley() {
   localStorage.setItem("theme-color", color);
 }
 
-let holdTimer;
-  document.getElementById("fingerprint").addEventListener("mousedown", () => {
-    holdTimer = setTimeout(() => {
-      document.getElementById("lockScreen").classList.add("hidden")
-      localStorage.setItem("locked", "false")
-      document.getElementById("homescreen").classList.remove("hidden")
-    }, 300);
-  });
-
-  document.getElementById("fingerprint").addEventListener("mouseup", () => {
-    clearTimeout(holdTimer);
-    document.getElementById("fingadv").textContent = "Fingerprint not read"
-    document.getElementById("fingadv").style.animation = "shake 0.4s ease";
-    setTimeout(() => {
-      document.getElementById("fingadv").textContent = ""
-      document.getElementById("fingadv").style.animation = "";
-    }, 2000)
-  });
-  document.getElementById("fingerprint").addEventListener("touchstart", () => {
-    holdTimer = setTimeout(() => {
-      console.log("¡Acción activada por mantener presionado (touch)!");
-      document.getElementById("lockScreen").classList.add("hidden")
-      document.getElementById("homescreen").classList.remove("hidden")
-    }, 300);
-  });
-
-  document.getElementById("fingerprint").addEventListener("touchend", () => {
-    clearTimeout(holdTimer);
-    document.getElementById("fingadv").textContent = "Fingerprint not read"
-    document.getElementById("fingadv").style.animation = "shake 0.4s ease";
-    setTimeout(() => {
-      document.getElementById("fingadv").style.animation = "";
-    }, 150)
-    setTimeout(() => {
-      document.getElementById("fingadv").textContent = ""
-      document.getElementById("fingadv").style.animation = "";
-    }, 2000)
-  });
-  
 function lock() {
   document.getElementById("lockScreen").classList.remove("hidden")
   document.getElementById("homescreen").classList.add("hidden")
