@@ -21,6 +21,7 @@ body{
  transition: background-image 0.2s ease;
  color-scheme: dark;
  overflow-y: hidden;
+ font-family: 'Segoe UI', Tahoma;
 }
 button{
  background: none;
