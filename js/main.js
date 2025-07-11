@@ -28,31 +28,17 @@ navigator.getBattery().then(battery => {
 });
 
 
-function ObsidianMist() {
-  const color = "rgba(70, 21, 50, 0.65)";
-  document.documentElement.style.setProperty("--theme-color", color);
-  localStorage.setItem("theme-color", color);
+function setThemeColor(rgba) {
+  document.documentElement.style.setProperty("--theme-color", rgba);
+  localStorage.setItem("theme-color", rgba);
 }
-function CristalFog() {
-  const color = "rgba(100, 100, 100, 0.65)";
-  document.documentElement.style.setProperty("--theme-color", color);
-  localStorage.setItem("theme-color", color);
-}
-function TransLava() {
-  const color = "rgba(80, 21, 14, 0.65)";
-  document.documentElement.style.setProperty("--theme-color", color);
-  localStorage.setItem("theme-color", color);
-}
-function paleGreen() {
-  const color = "rgba(10, 55, 20, 0.65)";
-  document.documentElement.style.setProperty("--theme-color", color);
-  localStorage.setItem("theme-color", color);
-}
-function bluevalley() {
-  const color = "rgba(10, 21, 40, 0.65)";
-  document.documentElement.style.setProperty("--theme-color", color);
-  localStorage.setItem("theme-color", color);
-}
+
+// Y luego:
+function ObsidianMist() { setThemeColor("rgba(70, 21, 50, 0.65)"); }
+function CristalFog()   { setThemeColor("rgba(100, 100, 100, 0.65)"); }
+function TransLava()    { setThemeColor("rgba(80, 21, 14, 0.65)"); }
+function paleGreen()    { setThemeColor("rgba(10, 55, 20, 0.65)"); }
+function bluevalley()   { setThemeColor("rgba(10, 21, 40, 0.65)"); }
 
 function lock() {
   document.getElementById("lockScreen").classList.remove("hidden")
@@ -60,19 +46,21 @@ function lock() {
   document.getElementById("lockScreen").classList.remove("unused")
 }
 
-function showPeninsula(message, duration, width, height, paddingX, paddingY) {
+var timerOn = null
+function showPeninsula(message, duration, width, height) {
   const peninsula = document.getElementById("peninsula");
+  clearTimeout(timerOn)
   peninsula.textContent = message;
   peninsula.style.width = `${width}px`;
   peninsula.style.height = `${height}px`;
-  //peninsula.style.borderRadius = `0 0 ${borRad} ${borRad}`;
-  peninsula.style.padding = `${paddingX}px ${paddingY}px`;
+  peninsula.style.color = `white`
+  peninsula.style.padding = '0 10px';
 
-  setTimeout(() => {
+  timerOn = setTimeout(() => {
     peninsula.style.width = "0px";
     peninsula.style.height = "24px";
     peninsula.style.padding = "0";
-    //peninsula.style.borderRadius = "0px";
+    //peninsula.style.color = `black`
     peninsula.textContent = "";
   }, duration);
 }

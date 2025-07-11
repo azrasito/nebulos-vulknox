@@ -1,18 +1,22 @@
 function updateClock() {
   const now = new Date();
-  const hours = String(now.getHours()).padStart(2, '0');
-  const mins = String(now.getMinutes()).padStart(2, '0');
-  const secs = String(now.getSeconds()).padStart(2, '0');
-  const day = String(now.getDate()).padStart(2, '0');
-  const month = String(now.getMonth() + 1).padStart(2, '0'); // Meses van de 0 a 11
+  const [hours, mins, secs] = [
+    now.getHours().toString().padStart(2, '0'),
+    now.getMinutes().toString().padStart(2, '0'),
+    now.getSeconds().toString().padStart(2, '0')
+  ];
+  const day = now.getDate().toString().padStart(2, '0');
+  const month = (now.getMonth() + 1).toString().padStart(2, '0');
   const year = now.getFullYear();
 
-  const formattedDate = `${month}/${day}/${year}`;
+  const time = `${hours}:${mins}`;
+  const timeWithSeconds = `${hours}:${mins}:${secs}`;
+  const date = `${month}/${day}/${year}`;
 
-  document.getElementById('hour').textContent = `${hours}:${mins}`;
-  document.getElementById('hour2').textContent = `${hours}:${mins}:${secs}`;
-  document.getElementById('hour3').textContent = `${hours}:${mins}`;
-  document.getElementById('date').textContent = formattedDate;
+  document.getElementById('hour').textContent = time;
+  document.getElementById('hour2').textContent = timeWithSeconds;
+  document.getElementById('hour3').textContent = time;
+  document.getElementById('date').textContent = date;
 }
 
 setInterval(updateClock, 1000);

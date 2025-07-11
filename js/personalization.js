@@ -1,21 +1,20 @@
-// Fondo: desde input o imagen
 const uploader = document.getElementById("uploader");
+const screen = document.getElementById("screen");
 
-const fondoGuardado = localStorage.getItem("fondo");
-if (fondoGuardado) {
-  // importante: asegúrate de que esta línea se ejecute después de que todo cargue
-  window.addEventListener("load", () => {
-    document.getElementById("screen").style.backgroundImage = `url(${fondoGuardado})`;
-    //document.body.style.backgroundImage = `url(${fondoGuardado})`
-  });
+function setBackground(url) {
+  screen.style.backgroundImage = `url(${url})`;
+  localStorage.setItem("fondo", url);
 }
+
+window.addEventListener("load", () => {
+  const fondoGuardado = localStorage.getItem("fondo");
+  if (fondoGuardado) setBackground(fondoGuardado);
+});
 
 function changeto(elemento) {
   const url = elemento.src;
-  document.getElementById("screen").style.backgroundImage = `url(${url})`;
-  //document.body.style.backgroundImage = `url(${url})`
-  localStorage.setItem("fondo", url);
-  //uploader.value = ""; // Permitir subir el mismo archivo de nuevo
+  setBackground(url);
+  uploader.value = ""; // Para poder volver a subir la misma imagen si quieres
 }
 
 uploader.addEventListener("change", function () {
@@ -25,9 +24,7 @@ uploader.addEventListener("change", function () {
   const reader = new FileReader();
   reader.onload = function (e) {
     const dataURL = e.target.result;
-    document.getElementById("screen").style.backgroundImage = `url(${dataURL})`;
-    //document.body.style.backgroundImage = `url(${dataURL})`
-    localStorage.setItem("fondo", dataURL);
+    setBackground(dataURL);
   };
   reader.readAsDataURL(file);
 });
