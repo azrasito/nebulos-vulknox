@@ -35,15 +35,15 @@
     
     <!-- Homescreen -->
     <div id="homescreen">
-      <button onclick="openApp(`settingsApp`)" id="settingsButton" style="position: absolute; top: 90%; left: 50%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/settings.png" alt="settings"/></button>
-      <button onclick="showPeninsula(`Files not implemented`, 2100, 175, 40, 0, 10)" id="filesButton" style="position: absolute; top: 90%; left: 30%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/files.png" alt="files"/></button>
-      <button onclick="showPeninsula(`Clock under development`, 2100, 150, 35, 0, 5)" id="clockButton" style="position: absolute; top: 90%; left: 70%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/clock.png" alt="clock"/></button>
-      <button onclick="openApp('calculator')" id="calcButton" style="position: absolute; top: 90%; left: 10%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/calculator.png" alt="calc"/></button>
-      <button onclick="showPeninsula(`Messages not implemented`, 2100, 200, 38, 2.50, 7.5)" id="msgButton" style="position: absolute; top: 90%; left: 90%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/messages.png" alt="messages"/></button>
-      <button onclick="openApp('phone')" id="phoButton" style="position: absolute; top: 80%; left: 90%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/phone.png" alt="phone"/></button>
-      <button onclick="openApp('galeria')" id="galButton" style="position: absolute; top: 80%; left: 10%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/gallery.png" alt="gallery"/></button>
-      <button onclick="showPeninsula(`Music not implemented`, 2100, 200, 38, 2.50, 7.5)" id="musButton" style="position: absolute; top: 80%; left: 30%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/music.png" alt="music"/></button>
-      <button onclick="showPeninsula(`Help coming soon...`, 2100, 200, 38, 2.50, 7.5)" id="hlpButton" style="position: absolute; top: 80%; left: 70%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/help.png" alt="helpIcon"/></button>
+      <button class="app-icon" onclick="openApp(`settingsApp`)" id="settingsButton" style="position: absolute; top: 90%; left: 50%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/settings.png" alt="settings"/></button>
+      <button class="app-icon" onclick="showPeninsula(`Files under development`, 2100, 150, 34)" id="filesButton" style="position: absolute; top: 90%; left: 30%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/files.png" alt="files"/></button>
+      <button class="app-icon" onclick="openApp('clockApp')" id="clockButton" style="position: absolute; top: 90%; left: 70%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/clock.png" alt="clock"/></button>
+      <button class="app-icon" onclick="openApp('calculator')" id="calcButton" style="position: absolute; top: 90%; left: 10%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/calculator.png" alt="calc"/></button>
+      <button class="app-icon" onclick="showPeninsula(`Messages not implemented`, 2100, 200, 38)" id="msgButton" style="position: absolute; top: 90%; left: 90%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/messages.png" alt="messages"/></button>
+      <button class="app-icon" onclick="openApp('phone')" id="phoButton" style="position: absolute; top: 80%; left: 90%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/phone.png" alt="phone"/></button>
+      <button class="app-icon" onclick="openApp('galeria')" id="galButton" style="position: absolute; top: 80%; left: 10%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/gallery.png" alt="gallery"/></button>
+      <button class="app-icon" onclick="showPeninsula(`Music not implemented`, 2100, 200, 38)" id="musButton" style="position: absolute; top: 80%; left: 30%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/music.png" alt="music"/></button>
+      <button class="app-icon" onclick="showPeninsula(`Help coming soon...`, 2100, 200, 38)" id="hlpButton" style="position: absolute; top: 80%; left: 70%; transform: translate(-50%, -50%);"><img src="assets/icons/apps/help.png" alt="helpIcon"/></button>
     </div>
     
     <!-- Settings App -->
@@ -126,9 +126,12 @@
     
     <!-- Clock App -->
     <div id="clockApp">
+      <br /><br />
+      <br /><br />
+      <h3 style="position: absolute; top: 55px; left: 22px;">Clock</h3>
       <div id="hour2"></div>
       <br />
-      <h2>Alarms</h2>
+      <button type="button" style="position: absolute; width: 50px; height: 50px; border: var(--border-preset); background: var(--theme-color); border-radius: 10px; bottom: 100px; left: 50%; transform: translate(-50%);">+</button>
     </div>
     
     <!-- Gallery App -->
@@ -151,7 +154,7 @@
     <!-- Phone App -->
     <div id="phone">
       <input type="text" id="phoneScreen" placeholder="0"></input>
-      <div id="numpad">
+      <div id="numpad-phone">
         <button onclick="erasePhone()" id="erase" style="border-radius: 10px; background: #a25555;">AC</button>
         <button onclick="delLastPhone()" id="delLast" style="background: #a25555; border-radius: 10px;">←</button>
         <br />
@@ -173,6 +176,11 @@
         <br />
         <button onclick="diall()" id="diall" style="border-radius: 10px; background: #545494; width: 100px;">=</button>
       </div>
+    </div>
+    
+    <!-- Files App -->
+    <div id="files">
+      <img src="assets/Screenshot_20250711-143442.jpg" style="object-fit: cover; width: 100%; height: 100%;"/>
     </div>
   </div>
   
