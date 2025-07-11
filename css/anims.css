@@ -31,3 +31,40 @@
   15%{transform: translateY(15%);}
   20%{transform: translateY(-50%);}
 }
+@keyframes slideUpLock {
+  from {
+    top: 0;
+    opacity: 1;
+  }
+  to {
+    top: -140%;
+    opacity: 0;
+  }
+}
+
+@keyframes bounceInIcon {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideUpLock {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120%);
+    opacity: 0;
+  }
+}
