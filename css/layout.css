@@ -110,7 +110,7 @@
   font-family: 'Montserrat', sans-serif;
   overflow: hidden;
   padding: 0;
-  transition: width 0.3s ease, height 0.425s ease, padding 0.3s ease;
+  transition: width 0.3s ease, height 0.425s ease, padding 0.45s ease;
 }
 #notch{
  background: #111;
@@ -153,7 +153,7 @@
  justify-items: center;
  z-index: 1;
  opacity: 1;
- transition: all 0.2s ease;
+ transition: all 0.25s ease;
 }
 #homescreen.hidden{
  opacity: 0;
@@ -164,7 +164,7 @@
  top: 93%;
  transform: translate(-50%, -50%) scale(0.003, 0.001);
  background: var(--theme-color);
- transition: all 0.4s ease;
+ transition: all 0.275s ease;
  z-index: 10;
  padding: 7.5px;
  padding-top: 40px;
@@ -282,7 +282,7 @@
  top: 93%;
  transform: translate(-50%, -50%) scale(0.001, 0.001);
  background: var(--theme-color);
- transition: all 0.4s ease;
+ transition: all 0.274s ease;
  z-index: 10;
  padding: 7.5px;
  width: 100%;
@@ -353,7 +353,7 @@
  top: 82%;
  transform: translate(-50%, -50%) scale(0.001, 0.001);
  background: var(--theme-color);
- transition: all 0.4s ease;
+ transition: all 0.275s ease;
  z-index: 10;
  padding: 7.5px;
  width: 100%;
@@ -388,7 +388,7 @@
  top: 78%;
  transform: translate(-50%, -50%) scale(0.001, 0.001);
  background: var(--theme-color);
- transition: all 0.4s ease;
+ transition: all 0.275s ease;
  z-index: 10;
  padding: 7.5px;
  width: 100%;
@@ -436,7 +436,7 @@
  top: 93.5%;
  transform: translate(-50%, -50%) scale(0.001, 0.001);
  background: var(--theme-color);
- transition: all 0.4s ease;
+ transition: all 0.25s ease;
  z-index: 10;
  padding: 7.5px;
  width: 100%;
