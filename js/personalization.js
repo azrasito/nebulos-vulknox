@@ -28,3 +28,12 @@ uploader.addEventListener("change", function () {
   };
   reader.readAsDataURL(file);
 });
+
+function setThemeColor(rgba) {
+  document.documentElement.style.setProperty("--theme-color", rgba);
+  localStorage.setItem("theme-color", rgba);
+}
+
+// Y luego:
+function ObsidianMist() { setThemeColor("rgba(21, 21, 34, 0.65)"); document.body.style.color = "white";}
+function CristalFog() { setThemeColor("rgba(190, 180, 180, 0.85)"); document.body.style.color = "black";}

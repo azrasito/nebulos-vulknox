@@ -27,25 +27,6 @@ navigator.getBattery().then(battery => {
   battery.addEventListener('chargingchange', updateBatteryStatus);
 });
 
-
-function setThemeColor(rgba) {
-  document.documentElement.style.setProperty("--theme-color", rgba);
-  localStorage.setItem("theme-color", rgba);
-}
-
-// Y luego:
-function ObsidianMist() { setThemeColor("rgba(70, 21, 50, 0.65)"); }
-function CristalFog()   { setThemeColor("rgba(100, 100, 100, 0.65)"); }
-function TransLava()    { setThemeColor("rgba(80, 21, 14, 0.65)"); }
-function paleGreen()    { setThemeColor("rgba(10, 55, 20, 0.65)"); }
-function bluevalley()   { setThemeColor("rgba(10, 21, 40, 0.65)"); }
-
-function lock() {
-  document.getElementById("lockScreen").classList.remove("hidden")
-  document.getElementById("homescreen").classList.add("hidden")
-  document.getElementById("lockScreen").classList.remove("unused")
-}
-
 var timerOn = null
 function showPeninsula(message, duration, width, height) {
   const peninsula = document.getElementById("peninsula");

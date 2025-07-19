@@ -25,6 +25,9 @@ function enableSwipeToClose(appElement, callback = () => {}) {
   appElement.addEventListener("mousedown", onTouchStart);
   appElement.addEventListener("mouseup", onTouchEnd);
 }
+function enableSwipeToControlCenter(element) {
+  
+}
 
 // Lista de apps con posibles callbacks
 enableSwipeToClose(document.getElementById("settingsApp"));
