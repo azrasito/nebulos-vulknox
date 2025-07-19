@@ -49,24 +49,18 @@
     <!-- Settings App -->
     <div id="settingsApp">
         <h2 style="font-weight: 100;">Settings</h2>
-      <br /><br />
+      <br />
       <div id="sectionSett">
-        <button onclick="openApp('themes')">✦ Themes</button>
+        <button onclick="showPeninsula(`System Info not available`, 2100, 180, 34)">✦ System</button>
         <br />
         <button onclick="openApp('personalization')">∆ Personalization</button>
-      </div>
-      <br /><br />
-      <div id="sectionSett">
-        <button onclick="showPeninsula('System Info not available', 2100, 180, 37.5)">∆ System Info</button>
+        <br />
+        <button onclick="showPeninsula('Security settings not available', 2100, 180, 37.5)">∆ Security</button>
       </div>
     </div>
     <!-- Themes Section on Settings App -->
     <div id="themes">
-      <button onclick="ObsidianMist()">Obsidian Mist</button>
-      <button onclick="CristalFog()">Cristal Fog</button>
-      <button onclick="TransLava()">Translucent Lava</button>
-      <button onclick="paleGreen()">Pale Green</button>
-      <button onclick="bluevalley()">Blue Valley</button>
+      
     </div>
     <!-- Personalization section on Settings App -->
     <div id="personalization">
@@ -86,8 +80,13 @@
       <br />
       <input type="file" id="uploader" accept="image/*" style="display: none;"/>
       <label for="uploader" id="uploader2">Upload a custom image</label>
+      <br />
+      <br />
+      <button onclick="ObsidianMist()">Dark Mode</button>
+      <button onclick="CristalFog()">Light Mode</button>
       <br /><br />
     </div>
+    
     <!-- System Info-->
     <div id="sysinfo">
       <img src="assets/icons/sysImg.png" style="width: 172.16px; height: 63.3px; object-fit: contain; background: #333; border-radius: 10px;"/>
@@ -98,7 +97,7 @@
       <input type="text" id="calcScreen" placeholder="0"></input>
       <div id="numpad">
         <button onclick="erase()" id="erase" style="border-radius: 10px; background: #a25555;">AC</button>
-        <button onclick="delLast()" id="delLast" style="background: #a25555; border-radius: 10px;">←</button>
+        <button onclick="delLast()" id="delLast" style="background: #a25555; border-radius: 10px;">⌫</button>
         <button onclick="switchMinus()">±</button>
         <button onclick="append('/')">÷</button>
         <br />
