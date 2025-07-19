@@ -2,7 +2,7 @@
  border: 2.5px solid #ccc;
  width: 265px;
  height: 520px;
- border-radius: 35px;
+ border-radius: 20px;
  top: 0;
  left: 0;
  display: flex;
@@ -22,7 +22,7 @@
  left: 0;
  width: 100%;
  height: 12px;
- background: #42445A24;
+ background: #83A1AC3D;
  backdrop-filter: blur(10px);
  display: inline-flex;
  padding: 10px;
@@ -39,11 +39,11 @@
  left: 0;
  opacity: 1;
  position: absolute;
- transition: top 0.25s cubic-bezier(.58,.1,.3,.63), opacity 0.4s ease-in-out;
+ transition: top 0.55s cubic-bezier(.58,.1,.3,.63), opacity 0.55s ease-in-out, all 0.53s cubic-bezier(0.55, 0.085, 0.68, 0.53);
  border-radius: 20px;
- backdrop-filter: blur(10px);
+ backdrop-filter: blur(5.0px);
  border: var(--border-preset);
- border-radius: 10px;
+ border-radius: 12px;
 }
 #lockScreen #fingerprint{
  padding: 1.5px;
@@ -156,7 +156,7 @@
  transition: all 0.25s ease;
 }
 #homescreen.hidden{
- opacity: 0;
+ opacity: 0.2;
 }
 #settingsApp{
  position: absolute;
@@ -167,7 +167,7 @@
  transition: all 0.275s ease;
  z-index: 10;
  padding: 7.5px;
- padding-top: 40px;
+ padding-top: 50px;
  width: 100%;
  height: 100%;
  text-align: center;
@@ -181,6 +181,7 @@
  color: #ffffffcc;
  box-shadow: 0 8px 32px 0 var(--boxshadow-preset);
  text-shadow: 0 0 4px var(--textshadow-preset);
+ width: 200px;
 }
 #settingsApp.shown{
  left: 50%;
@@ -232,7 +233,7 @@
  top: 93%;
  transform: translate(-50%, -50%) scale(0.001, 0.001);
  background: var(--theme-color);
- transition: all 0.4s ease;
+ transition: all 0.275s ease;
  z-index: 10;
  padding: 7.5px;
  width: 100%;
@@ -334,11 +335,11 @@
 #themes.shown{
  left: 0;
 }
-#themes button{
- padding: 5px;
+#personalization button{
+ padding: 7.5px 2.5px 7.5px 2.5px;
  width: auto;
  height: 50px;
- border-radius: 25px;
+ border-radius: 10px;
  border: var(--border-preset);
  background: var(--theme-color);
  font-size: 12.5px;
@@ -359,7 +360,7 @@
  width: 100%;
  height: 100%;
  padding: 10px;
- padding-top: 70px;
+ padding-top: 100px;
  padding-bottom: 70px;
  text-align: center;
  border-radius: 155.0px;
@@ -453,7 +454,11 @@
 .bouncing-icon {
   animation: bounceInY 0.5s ease-out;
 }
-/*.app-icon {
+.app-icon {
   transition: transform 0.2s ease, opacity 0.2s ease;
-  transform: translateY(0);
-}*/
+  transform: translateY(0) scale(1);
+  transition: all 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.app-icon.hidden{
+ transform: scale(0.4);
+}
