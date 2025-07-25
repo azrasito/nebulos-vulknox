@@ -21,6 +21,10 @@ function calcc() {
   }
 }
 
+function sqrt() {
+  display.value = Math.sqrt(eval(display.value))
+}
+
 function diall() {
   displayPhone.value = "0";
 }

@@ -1,9 +1,10 @@
+var screeen = document.getElementById("screen")
 function openApp(appInternalName) {
   const app = document.getElementById(appInternalName);
   app.classList.add("shown");
-  app.style.animation = "opening";
+  screeen.classList.add('zoomed');
   setTimeout(() => {
-    app.style.animation = "";
+    //nothing to see here folks
   }, 160);
 }
 
@@ -16,6 +17,7 @@ function enableSwipeToClose(appElement, callback = () => {}) {
     const endX = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
     if (endX - startX > 100) {
       appElement.classList.remove("shown");
+      screeen.classList.remove('zoomed');
       callback();
     }
   };
@@ -25,9 +27,9 @@ function enableSwipeToClose(appElement, callback = () => {}) {
   appElement.addEventListener("mousedown", onTouchStart);
   appElement.addEventListener("mouseup", onTouchEnd);
 }
-function enableSwipeToControlCenter(element) {
+/*function enableSwipeToControlCenter(element) {
   
-}
+}*/
 
 // Lista de apps con posibles callbacks
 enableSwipeToClose(document.getElementById("settingsApp"));

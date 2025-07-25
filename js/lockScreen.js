@@ -3,6 +3,25 @@ function lock() {
   document.getElementById("homescreen").classList.add("hidden")
   document.getElementById("lockScreen").classList.remove("unused")
   document.querySelector(".app-icon").classList.add("hidden")
+  
+  
+  const offscreen = document.getElementById("offscreen");
+
+  if (getComputedStyle(offscreen).display !== "none") {
+    // Apagando
+    offscreen.classList.add("off-transition");
+    setTimeout(() => {
+      offscreen.style.display = "none";
+    }, 300); // mismo tiempo que la transición
+  } else {
+    // Encendiendo
+    offscreen.style.display = "flex";
+    
+    // Esperar un tick para aplicar animación
+    setTimeout(() => {
+      offscreen.classList.remove("off-transition");
+    }, 10); // 10ms es suficiente para que el navegador actualice el estilo
+  }
 }
 
 const unlock = () => {
